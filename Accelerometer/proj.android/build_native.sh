@@ -1,5 +1,5 @@
 APPNAME="Accelerometer"
-
+export NDK_ROOT="/Volumes/DATA/Cocos2d-x/android-ndk-r8e"
 # options
 
 buildexternalsfromsource=

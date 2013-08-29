@@ -2,6 +2,12 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "MyAccelerometer.h"
+
+#define kSampleArray    3
+#define epsilon         0.05
+
+using namespace cocos2d;
 
 class HelloWorld : public cocos2d::CCLayer
 {
@@ -17,6 +23,28 @@ public:
     
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);
+    
+    CCLabelTTF *labelX;
+    CCLabelTTF *labelY;
+    CCLabelTTF *labelZ;
+    
+    bool moveUP = false;
+    bool moveDown = false; 
+    bool moveLeft = false;
+    bool moveRight = false;
+    
+    void update(float delta);
+    virtual void didAccelerate(CCAcceleration* pAccelerationValue);
+    
+    std::vector<float> arrayX;
+    
+    bool firstTime = true;
+    float currentX;
+    
+    bool isShake = false;
+    
+    void onEnter();
+    void onExit();
 };
 
 #endif // __HELLOWORLD_SCENE_H__
