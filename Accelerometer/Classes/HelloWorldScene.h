@@ -4,12 +4,11 @@
 #include "cocos2d.h"
 #include "MyAccelerometer.h"
 
-#define kSampleArray    3
-#define epsilon         0.05
+
 
 using namespace cocos2d;
 
-class HelloWorld : public cocos2d::CCLayer
+class HelloWorld : public cocos2d::CCLayer, public MyAccelerometerDelegate
 {
 public:
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
@@ -24,27 +23,26 @@ public:
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);
     
-    CCLabelTTF *labelX;
-    CCLabelTTF *labelY;
-    CCLabelTTF *labelZ;
+    CCLabelTTF *labelXLeft;
+    CCLabelTTF *labelXRight;
+    CCLabelTTF *labelYLeft;
+    CCLabelTTF *labelYRight;
+    CCLabelTTF *labelZLeft;
+    CCLabelTTF *labelZRight;
     
-    bool moveUP = false;
-    bool moveDown = false; 
-    bool moveLeft = false;
-    bool moveRight = false;
-    
-    void update(float delta);
-    virtual void didAccelerate(CCAcceleration* pAccelerationValue);
-    
-    std::vector<float> arrayX;
-    
-    bool firstTime = true;
-    float currentX;
-    
-    bool isShake = false;
+    CCLabelTTF *labelXLeftA;
+    CCLabelTTF *labelXRightA;
+    CCLabelTTF *labelYLeftA;
+    CCLabelTTF *labelYRightA;
     
     void onEnter();
     void onExit();
+    
+    void disableAll();
+    void disableA();
+    
+    virtual void acceleration(MyAccelerationRotate *pAccelerationValue);
+    virtual void snake(MyAccelerationSnake *pSnakeValue);
 };
 
 #endif // __HELLOWORLD_SCENE_H__
