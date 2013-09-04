@@ -520,6 +520,7 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
+		A9131BBA17D6D78F00A8A695 /* MyAccelerometerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MyAccelerometerProtocol.h; path = ../Classes/MyAccelerometerProtocol.h; sourceTree = "<group>"; };
 		A920476517CF2CA80078FD7A /* MyAccelerometer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MyAccelerometer.cpp; path = ../Classes/MyAccelerometer.cpp; sourceTree = "<group>"; };
 		A920476617CF2CA80078FD7A /* MyAccelerometer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyAccelerometer.h; path = ../Classes/MyAccelerometer.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -1055,6 +1056,7 @@
 				1AFAF8B616D35DE700DB1158 /* HelloWorldScene.h */,
 				A920476517CF2CA80078FD7A /* MyAccelerometer.cpp */,
 				A920476617CF2CA80078FD7A /* MyAccelerometer.h */,
+				A9131BBA17D6D78F00A8A695 /* MyAccelerometerProtocol.h */,
 			);
 			name = Classes;
 			path = ../classes;
