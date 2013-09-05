@@ -2,13 +2,11 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
-#include "MyAccelerometer.h"
-
-
+#include "PAccelerometer.h"
 
 using namespace cocos2d;
 
-class HelloWorld : public cocos2d::CCLayer, public MyAccelerometerDelegate
+class HelloWorld : public cocos2d::CCLayer, public PAccelerometerDelegate
 {
 public:
     // Here's a difference. Method 'init' in cocos2d-x returns bool, instead of returning 'id' in cocos2d-iphone
@@ -41,8 +39,8 @@ public:
     void disableAll();
     void disableA();
     
-    virtual void acceleration(MyAccelerationRotate *pAccelerationValue);
-    virtual void snake(MyAccelerationSnake *pSnakeValue);
+    virtual void didAccelerate(PAccelerationRotate *pAccelerationValue, PAccelerationSnake *pSnakeValue);
+    
 };
 
 #endif // __HELLOWORLD_SCENE_H__

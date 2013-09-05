@@ -122,42 +122,39 @@ bool HelloWorld::init()
     this->scheduleUpdate();
         
     
-    MyAccelerometer *xxx = new MyAccelerometer();
-    xxx->init();
-    xxx->setDelegate(this);
+    PAccelerometer::sharedAccelerometer()->setDelegate(this);
     
     return true;
 }
 
-void HelloWorld::acceleration(MyAccelerationRotate *pAccelerationValue){
-    
-}
 
-void HelloWorld::snake(MyAccelerationSnake *pSnakeValue){
-    disableAll();
-    if (pSnakeValue->xLeft != kNULLSnake) {
-        labelXLeft->setString(CCString::createWithFormat("%3.2f", pSnakeValue->xLeft)->getCString());
-        labelXLeft->setVisible(true);
-    }
-    if (pSnakeValue->xRight != kNULLSnake) {
-        labelXRight->setString(CCString::createWithFormat("%3.2f", pSnakeValue->xRight)->getCString());
-        labelXRight->setVisible(true);
-    }
-    if (pSnakeValue->yLeft != kNULLSnake) {
-        labelYLeft->setString(CCString::createWithFormat("%3.2f", pSnakeValue->yLeft)->getCString());
-        labelYLeft->setVisible(true);
-    }
-    if (pSnakeValue->yRight != kNULLSnake) {
-        labelYRight->setString(CCString::createWithFormat("%3.2f", pSnakeValue->yRight)->getCString());
-        labelYRight->setVisible(true);
-    }
-    if (pSnakeValue->zLeft != kNULLSnake) {
-        labelZLeft->setString(CCString::createWithFormat("%3.2f", pSnakeValue->zLeft)->getCString());
-        labelZLeft->setVisible(true);
-    }
-    if (pSnakeValue->zRight != kNULLSnake) {
-        labelZRight->setString(CCString::createWithFormat("%3.2f", pSnakeValue->zRight)->getCString());
-        labelZRight->setVisible(true);
+void HelloWorld::didAccelerate(PAccelerationRotate *pAccelerationValue, PAccelerationSnake *pSnakeValue){
+    if (pSnakeValue->isSnake) {
+        disableAll();
+        if (pSnakeValue->xLeft != kNULLSnake) {
+            labelXLeft->setString(CCString::createWithFormat("%3.2f", pSnakeValue->xLeft)->getCString());
+            labelXLeft->setVisible(true);
+        }
+        if (pSnakeValue->xRight != kNULLSnake) {
+            labelXRight->setString(CCString::createWithFormat("%3.2f", pSnakeValue->xRight)->getCString());
+            labelXRight->setVisible(true);
+        }
+        if (pSnakeValue->yLeft != kNULLSnake) {
+            labelYLeft->setString(CCString::createWithFormat("%3.2f", pSnakeValue->yLeft)->getCString());
+            labelYLeft->setVisible(true);
+        }
+        if (pSnakeValue->yRight != kNULLSnake) {
+            labelYRight->setString(CCString::createWithFormat("%3.2f", pSnakeValue->yRight)->getCString());
+            labelYRight->setVisible(true);
+        }
+        if (pSnakeValue->zLeft != kNULLSnake) {
+            labelZLeft->setString(CCString::createWithFormat("%3.2f", pSnakeValue->zLeft)->getCString());
+            labelZLeft->setVisible(true);
+        }
+        if (pSnakeValue->zRight != kNULLSnake) {
+            labelZRight->setString(CCString::createWithFormat("%3.2f", pSnakeValue->zRight)->getCString());
+            labelZRight->setVisible(true);
+        }
     }
 }
 
